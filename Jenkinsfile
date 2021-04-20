@@ -22,7 +22,14 @@ pipeline{
                 docker push jmeunierilki/shopfront:1.0
                 '''
             }
-
+        }
+        stage("Kubernetes Deploy"){
+            steps{
+                sh '''
+                echo "====++++executing Kubernetes Deploy++++===="
+                kubctl apply -f ./kubernetes/shopfront.yaml
+                '''
+            }
         }
     }
 }
