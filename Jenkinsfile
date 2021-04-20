@@ -7,6 +7,7 @@ pipeline{
             steps{
                 sh '''
                 echo "========Build Maven========"
+                cd ./shopfront
                 mvn clean install
                 '''
             }
