@@ -5,8 +5,10 @@ pipeline{
     stages{
         stage("Build"){
             steps{
+                sh '''
                 echo "========Build Maven========"
-                mvn clean install
+                sh mvn clean install
+                '''
             }
         }
     }
