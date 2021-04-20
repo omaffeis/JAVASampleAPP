@@ -27,7 +27,7 @@ pipeline{
             steps{
                 sh '''
                 echo "====++++executing Kubernetes Deploy++++===="
-                kubctl apply -f ./kubernetes/shopfront.yaml
+                kubectl apply -f ./kubernetes/shopfront.yaml
                 '''
             }
         }
