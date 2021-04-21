@@ -3,11 +3,29 @@ pipeline{
         label "master"
     }
     stages{
-        stage("Build"){
+        stage("Build ShopFront"){
             steps{
                 sh '''
-                echo "========Build Maven========"
+                echo "========Build ShopFront========"
                 cd ./shopfront
+                mvn clean install
+                '''
+            }
+        }
+        stage("Build Product Catalogue"){
+            steps{
+                sh '''
+                echo "========Build Product Catalogue========"
+                cd ./productcatalogue
+                mvn clean install
+                '''
+            }
+        }
+        stage("Build Stock Manager"){
+            steps{
+                sh '''
+                echo "========Build Stock Manager========"
+                cd ./stockmanager
                 mvn clean install
                 '''
             }
