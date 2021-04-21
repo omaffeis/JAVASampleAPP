@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: productcatalogue
-        image: jmeunierilki/productcatalogue:v1
+        image: jmeunierilki/productcatalogue:1.0
         ports:
         - containerPort: 8020
         livenessProbe:

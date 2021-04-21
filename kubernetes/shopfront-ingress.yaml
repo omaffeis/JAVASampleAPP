@@ -1,0 +1,16 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ingress-shopfront
+  labels:
+      name: ingress-shopfront
+spec:
+  rules:
+  - host: shopfront.ilkiformation.fr
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/*"
+        backend:
+          serviceName: shopfront
+          servicePort: 8010
