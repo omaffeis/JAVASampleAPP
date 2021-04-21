@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: shopfront
-        image: jmeunierilki/shopfront:latest
+        image: jmeunierilki/shopfront:1.0
         ports:
         - containerPort: 8010
         livenessProbe:
