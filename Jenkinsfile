@@ -27,6 +27,7 @@ pipeline{
             steps{
                 sh '''
                 echo "====++++executing Kubernetes Deploy++++===="
+                aws eks --region "us-east-1" update-kubeconfig --name "EKS_PREPA_JME_202104"
                 kubectl apply -f ./kubernetes/shopfront.yaml
                 '''
             }
