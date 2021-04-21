@@ -35,9 +35,3 @@ spec:
         image: jmeunierilki/stockmanager:1.0
         ports:
         - containerPort: 8030
-        livenessProbe:
-          httpGet:
-            path: /health
-            port: 8030
-          initialDelaySeconds: 30
-          timeoutSeconds: 10
