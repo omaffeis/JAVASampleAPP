@@ -27,7 +27,7 @@ pipeline{
             steps{
                 sh '''
                 echo "====++++executing Kubernetes Deploy++++===="
-                cd ..
+                ls
                 kubectl apply -f ./kubernetes/shopfront.yaml --kubeconfig /home/jenkins/kubeconfig.yaml
                 '''
             }
