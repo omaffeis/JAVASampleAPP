@@ -1,16 +1,16 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: ingress-productcatalogue
+  name: ingress-shopfront
   labels:
-      name: ingress-productcatalogue
+      name: ingress-shopfront
 spec:
   rules:
-  - host: productcatalogue.ilkiformation.fr
+  - host: shopfront.ilkiformation.fr
     http:
       paths:
       - pathType: Prefix
         path: "/"
         backend:
-          serviceName: productcatalogue
-          servicePort: 8020
+          serviceName: shopfront
+          servicePort: 8010
