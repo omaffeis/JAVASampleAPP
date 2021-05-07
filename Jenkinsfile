@@ -10,8 +10,8 @@ pipeline {
         }
         stage('Build Shot Front') {
             steps {
-                echo 'Build Shot Front !'
-                sh 'cd shotfront; mvn package'
+                echo 'Build Shop Front !'
+                sh 'cd shopfront; mvn package'
                 /* docker build . */
             }
         }
