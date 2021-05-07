@@ -5,23 +5,21 @@ pipeline {
             steps {
                 echo 'Build Product Catalogue !'
                 sh 'cd productcatalogue; mvn package'
-                sh 'cd productcatalogue; docker build .'
+                // sh 'cd productcatalogue; docker build .'
             }
         }
         stage('Build Shot Front') {
             steps {
                 echo 'Build Shot Front !'
-                /* cd shotfront
-                 mvn build
-                 docker build . */
+                sh 'cd shotfront; mvn package'
+                /* docker build . */
             }
         }
         stage('Build Stock Manager') {
             steps {
                 echo 'Build Stock Manager !'
-                /* cd stockmanager
-                 mvn build
-                 docker build . */
+                sh 'cd stockmanager; mvn package'
+                /* docker build . */
             }
         }
     }
