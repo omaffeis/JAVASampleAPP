@@ -6,8 +6,8 @@ pipeline {
                 echo 'Build Product Catalogue !'
                 sh 'ls -l'
                 sh 'cd productcatalogue'
-                mvn package
-                docker build .
+                sh 'mvn package'
+                sh 'docker build .'
             }
         }
         stage('Build Shot Front') {
