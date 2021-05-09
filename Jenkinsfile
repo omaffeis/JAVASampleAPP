@@ -8,7 +8,7 @@ pipeline {
                 echo 'Build Product Catalogue !'
                 sh 'env'
                 sh 'cd productcatalogue; mvn package'
-                sh 'cd productcatalogue; docker build --tag omaffeis/m2idocker-tp:v1'
+                sh 'cd productcatalogue; docker build --tag omaffeis/m2idocker-tp:v1 .'
                 sh 'cd productcatalogue; docker push omaffeis/m2idocker-tp:v1'
                 sh 'cd productcatalogue; docker build --tag harbor.om-project.fr/om-project/productcatalogue:v1 .'
                 // sh 'cd productcatalogue; docker push harbor.om-project.fr/om-project/productcatalogue:v1'
