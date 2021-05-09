@@ -26,7 +26,7 @@ pipeline {
             steps {
                 echo 'Build Stock Manager !'
                 sh 'cd stockmanager; mvn package'
-                sh 'cd stockmanager; docker build -tag harbor.om-project.fr/om-project/stockmanager:v1 .'
+                sh 'cd stockmanager; docker build --tag harbor.om-project.fr/om-project/stockmanager:v1 .'
                 // sh 'cd stockmanager; docker push harbor.om-project.fr/om-project/stockmanager:v1'
             }
         }
