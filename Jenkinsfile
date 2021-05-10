@@ -19,7 +19,7 @@ pipeline {
                 echo 'Build Shop Front !'
                 sh 'cd shopfront; mvn package'
                 sh 'cd shopfront ; docker build --tag harbor.om-project.fr/om-project/shopfront:v1 .'
-                sh 'cd shopfront ; docker push harbor.om-project.fr/om-project//shopfront:v1'
+                sh 'cd shopfront ; docker push harbor.om-project.fr/om-project/shopfront:v1'
             }
         }
         stage('Build Stock Manager') {
