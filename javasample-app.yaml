@@ -1,0 +1,54 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: javasample
+  namespace: shop-prod
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: javasample
+  template:
+    metadata:
+      labels:
+        app: javasample
+    spec:
+      containers:
+      - name: stopfront
+        image: harbor.om-project.fr/om-project/shopfront:v1
+        ports:
+        - containerPort: 8010
+      - name: productcatalogue
+        image: harbor.om-project.fr/om-project/productcatalogue:v1
+        ports:
+        - containerPort: 8020
+      - name: stockmanager
+        image: harbor.om-project.fr/om-project/stockmanager:v1
+        ports:
+        - containerPort: 8030
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: service-javasample
+  namespace: shop-prod
+  labels:
+    app: service-javasample 
+spec:
+  type: NodePort
+  selector:
+    app: service-javasample
+  ports:
+  - name: shopfront
+    port: 8010
+    targetPort: 8010
+    protocol: TCP
+  - name: productcatalogue
+    port: 8020
+    targetPort: 8020
+    protocol: TCP
+  - name: stockmanager
+    port: 8030
+    targetPort: 8030
+    protocol: TCP
