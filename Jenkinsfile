@@ -30,6 +30,10 @@ pipeline {
                 sh 'cd stockmanager; docker push harbor.om-project.fr/om-project/stockmanager:v1'
             }
         }
+        stage('Deploy on AWS') {
+            echo 'Deploy on AWS !'
+            sh 'docker apply -f javasample-app.yaml'
+        }
     }
 }
 
