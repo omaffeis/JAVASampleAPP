@@ -31,8 +31,10 @@ pipeline {
             }
         }
         stage('Deploy on AWS') {
-            echo 'Deploy on AWS !'
-            sh 'docker apply -f javasample-app.yaml'
+            steps {
+                echo 'Deploy on AWS !'
+                sh 'docker apply -f javasample-app.yaml'
+            }
         }
     }
 }
