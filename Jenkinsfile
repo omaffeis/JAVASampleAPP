@@ -33,7 +33,7 @@ pipeline {
         stage('Deploy on AWS') {
             steps {
                 echo 'Deploy on AWS !'
-                sh 'docker apply -f javasample-app.yaml'
+                sh 'kubectl apply -f javasample-app.yaml'
             }
         }
     }
